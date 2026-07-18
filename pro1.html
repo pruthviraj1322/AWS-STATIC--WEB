@@ -1,0 +1,98 @@
+#!/bin/bash
+
+# Update Ubuntu
+apt update -y
+
+# Install Apache2
+apt install apache2 -y
+
+# Start Apache
+systemctl start apache2
+
+# Enable Apache at Boot
+systemctl enable apache2
+
+# Create Company Website
+cat <<EOF > /var/www/html/index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>TechNova IT Solutions</title>
+
+<style>
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+padding-top:100px;
+}
+
+h1{
+color:#38bdf8;
+font-size:45px;
+}
+
+h2{
+color:#22c55e;
+}
+
+.box{
+width:700px;
+margin:auto;
+padding:30px;
+background:#1e293b;
+border-radius:10px;
+box-shadow:0 0 20px black;
+}
+
+.footer{
+margin-top:30px;
+color:orange;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>TechNova IT Solutions Pvt. Ltd.</h1>
+
+<h2>Welcome to Our Company Website</h2>
+
+<hr>
+
+<h3>Our Services</h3>
+
+<p>☁ AWS Cloud Solutions</p>
+<p>🌐 Networking</p>
+<p>🔒 Cyber Security</p>
+<p>💻 Web Hosting</p>
+
+<hr>
+
+<h3>Contact</h3>
+
+<p>Email : info@technova.com</p>
+
+<p>Phone : +91-9876543210</p>
+
+<div class="footer">
+
+<h2>Hosted on Amazon EC2</h2>
+
+<p>Created by Cloud Engineer</p>
+
+<p><b>Pruthviraj</b></p>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+EOF
